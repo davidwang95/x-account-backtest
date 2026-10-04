@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!*.example
+studies/
+private/
+*.sqlite3*
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz

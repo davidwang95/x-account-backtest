@@ -1,0 +1,4 @@
+interface:
+  display_name: "X Account Backtest"
+  short_description: "Source-linked X call backtests and Dave Wang PDF reports"
+  default_prompt: "Use $x-account-backtest to review this X account over the requested period and produce a source-linked Dave Wang Automation PDF report with call accuracy, benchmark comparisons and statistical charts."

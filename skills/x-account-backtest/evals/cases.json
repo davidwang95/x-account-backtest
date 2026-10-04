@@ -1,0 +1,16 @@
+{
+  "synthetic": true,
+  "runner": "python evals/run_evals.py",
+  "notice": "All profile, post, issuer and price content is synthetic. The runner uses temporary local files and makes no network requests.",
+  "cases": [
+    {"id":"known-event-study","request":"Backtest @fixturealpha over the supplied synthetic period, including inferred and explicit views.","pass":"Hand-calculated raw and market-relative outcomes, denominators, means and security counts match."},
+    {"id":"entry-and-missing-bars","request":"Use the stated conservative entry rule even when required prices are missing.","pass":"Friday publication enters Monday; missing exit remains unscored; later incomplete windows remain pending."},
+    {"id":"source-review-completeness","request":"Review every source post, including those with no directional view.","pass":"Every source ID appears once in reviews; missing or duplicate review rows are rejected."},
+    {"id":"exact-source-evidence","request":"Preserve authored evidence and reject paraphrases substituted as quotations.","pass":"Evidence absent from the source and altered full post text are rejected."},
+    {"id":"dated-security-identity","request":"Keep corporate actions separate unless the same security is verified.","pass":"Wrong-date issuer evidence and an alias chain without same-security proof are rejected; verified aliases share repeat and balance grouping."},
+    {"id":"frozen-input-integrity","request":"Score the frozen source classifications rather than edits made after validation.","pass":"Changed calls, source posts, post reviews or study plan are rejected by actual run_backtest before scoring."},
+    {"id":"macro-only-and-empty","request":"Report the absence of scoreable calls without inventing a result.","pass":"Empty and macro-only fixtures produce zero scored events and null hit rate/mean."},
+    {"id":"missing-benchmark-session","request":"Keep session horizons fixed even if the benchmark feed has a gap.","pass":"Independent supplied calendar catches an omitted SPY session and scoring refuses to proceed."},
+    {"id":"new-user-forward-review","request":"Use the skill to backtest an X handle over a user-specified period and produce an institutional PDF.","pass":"A reviewer can locate intake, source classification, required data access, deterministic scoring, report production, disclosures and delivery without inventing credentials or historical data."}
+  ]
+}
