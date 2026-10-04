@@ -18,6 +18,8 @@ $skill-installer Install the skill from https://github.com/davidwang95/x-account
 
 After installation, send the backtest command in your next message. If it is not discovered, start a new Codex task. No separate AI API key is needed. A real backtest requires historical X posts and market prices through existing provider access, a connector or a supplied export; provider charges may apply.
 
+**[Download the one-page installation guide](docs/x-account-backtest-quickstart.pdf)** for the install prompt, example command and output overview.
+
 The public repository is [davidwang95/x-account-backtest](https://github.com/davidwang95/x-account-backtest). You can also download its ZIP, extract it, and ask Codex to install the local skill from that folder.
 
 Codex can run `python tools/install_local.py` to perform the local copy. The installer preserves an existing installation rather than overwriting it. `python tools/package.py --output /path/outside/repository/x-account-backtest.zip` creates a clean shareable package with file hashes.
